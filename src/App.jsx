@@ -1,13 +1,25 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import { Login } from './components/Login';
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [user, setUser] = useState(null);
+
+  const hangleLogout = () => {
+    setUser(null);
+  }
+
 
   return (
-    <>
-      h1 hola mundo
-    </>
+    <Router>
+      <div>
+        <Routes>
+          <Route path='/' element= {<Login setUser={setUser}/>}/>
+        </Routes>
+      </div>
+    </Router>
   )
 }
 
