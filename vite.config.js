@@ -5,4 +5,10 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: './',
   plugins: [react()],
+  server: {
+    headers: {
+      // Deshabilitar 'interest-cohort' en el encabezado Permissions-Policy
+      'Permissions-Policy': 'interest-cohort=()'
+    }
+  }
 })
